@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>paginga &mdash; jQuery Pagination Plugin</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://raw.githubusercontent.com/mrk-j/paginga/v0.1/paginga.jquery.min.js"></script>
+		<style>
+			*
+			{
+				font-family: sans-serif;
+			}
+
+			.items div 
+			{
+				border: 1px solid gray;
+				margin: 5px;
+				padding: 10px;
+			}
+
+			.pager div
+			{
+				float: left;
+				border: 1px solid gray;
+				margin: 5px;
+				padding: 10px;
+			}
+
+			.pager div.disabled
+			{
+				opacity: 0.25;
+			}
+
+			.pager .pageNumbers a
+			{
+				display: inline-block;
+				padding: 0 10px;
+				color: gray;
+			}
+
+			.pager .pageNumbers a.active
+			{
+				color: orange;
+			}
+
+			.pager 
+			{
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Paginga</h1>
+		<h2>Example 1</h2>
+		<div class="paginate 1">
+			<div class="items">
+				<div>Item 1</div>
+				<div>Item 2</div>
+				<div>Item 3</div>
+				<div>Item 4</div>
+				<div>Item 5</div>
+				<div>Item 6</div>
+				<div>Item 7</div>
+				<div>Item 8</div>
+				<div>Item 9</div>
+				<div>Item 10</div>
+				<div>Item 11</div>
+				<div>Item 12</div>
+			</div>
+			<div class="pager">
+				<div class="firstPage">&laquo;</div>
+				<div class="previousPage">&lsaquo;</div>
+				<div class="pageNumbers"></div>
+				<div class="nextPage">&rsaquo;</div>
+				<div class="lastPage">&raquo;</div>
+			</div>
+		</div>
+		<h2>Example 2</h2>
+		<div class="paginate 2">
+			<div class="items">
+				<div>Item 1</div>
+				<div>Item 2</div>
+				<div>Item 3</div>
+				<div>Item 4</div>
+				<div>Item 5</div>
+				<div>Item 6</div>
+			</div>
+			<div class="pager">
+				<div class="previousPage">&lsaquo;</div>
+				<div class="pageNumbers"></div>
+				<div class="nextPage">&rsaquo;</div>
+			</div>
+		</div>
+		<h2>Example 3</h2>
+		<div class="paginate 3">
+			<div class="items">
+				<div>Item 1</div>
+				<div>Item 2</div>
+				<div>Item 3</div>
+			</div>
+			<div class="pager">
+				<div class="previousPage">&lsaquo;</div>
+				<div class="pageNumbers"></div>
+				<div class="nextPage">&rsaquo;</div>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				$(".paginate").paginga({
+					
+				});
+			});
+		</script>
+	</body>
+</html>
