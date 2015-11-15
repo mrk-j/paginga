@@ -1,3 +1,12 @@
+/*!
+ * paginga - jQuery Pagination Plugin v0.1
+ * https://github.com/mrk-j/paginga
+ *
+ * Copyright 2015 Mark and other contributors
+ * Released under the MIT license
+ * https://github.com/mrk-j/paginga/blob/master/LICENSE
+ */
+
 ;(function ($, window, document, undefined)
 {
 	"use strict";
