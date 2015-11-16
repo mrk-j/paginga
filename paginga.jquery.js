@@ -1,5 +1,5 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.2
+ * paginga - jQuery Pagination Plugin v0.3
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
@@ -14,7 +14,7 @@
 			defaults = {
 				itemsPerPage: 3,
 				itemsContainer: ".items",
-				item: "div",
+				item: "> div",
 				page: 1,
 				nextPage: ".nextPage",
 				previousPage: ".previousPage", 
