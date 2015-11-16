@@ -3,7 +3,7 @@
 	<head>
 		<title>paginga &mdash; jQuery Pagination Plugin</title>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="paginga.jquery.min.js"></script>
+		<script src="paginga.jquery.js"></script>
 		<style>
 			*
 			{
@@ -74,7 +74,7 @@
 				<div class="lastPage">&raquo;</div>
 			</div>
 		</div>
-		<h2>Example 2</h2>
+		<h2>Example 2 (no first/last page buttons)</h2>
 		<div class="paginate 2">
 			<div class="items">
 				<div>Item 1</div>
@@ -90,7 +90,7 @@
 				<div class="nextPage">&rsaquo;</div>
 			</div>
 		</div>
-		<h2>Example 3</h2>
+		<h2>Example 3 (auto hide pager)</h2>
 		<div class="paginate 3">
 			<div class="items">
 				<div>Item 1</div>
@@ -103,10 +103,38 @@
 				<div class="nextPage">&rsaquo;</div>
 			</div>
 		</div>
+		<h2>Example 4 (start on page 2)</h2>
+		<div class="paginate-page-2 4">
+			<div class="items">
+				<div>Item 1</div>
+				<div>Item 2</div>
+				<div>Item 3</div>
+				<div>Item 4</div>
+				<div>Item 5</div>
+				<div>Item 6</div>
+				<div>Item 7</div>
+				<div>Item 8</div>
+				<div>Item 9</div>
+				<div>Item 10</div>
+				<div>Item 11</div>
+				<div>Item 12</div>
+			</div>
+			<div class="pager">
+				<div class="firstPage">&laquo;</div>
+				<div class="previousPage">&lsaquo;</div>
+				<div class="pageNumbers"></div>
+				<div class="nextPage">&rsaquo;</div>
+				<div class="lastPage">&raquo;</div>
+			</div>
+		</div>
 		<script>
 			$(function() {
 				$(".paginate").paginga({
 					
+				});
+			  
+				$(".paginate-page-2").paginga({
+					page: 2
 				});
 			});
 		</script>

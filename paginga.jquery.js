@@ -1,12 +1,11 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.1
+ * paginga - jQuery Pagination Plugin v0.2
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
  * Released under the MIT license
  * https://github.com/mrk-j/paginga/blob/master/LICENSE
  */
-
 ;(function ($, window, document, undefined)
 {
 	"use strict";
@@ -16,6 +15,7 @@
 				itemsPerPage: 3,
 				itemsContainer: ".items",
 				item: "div",
+				page: 1,
 				nextPage: ".nextPage",
 				previousPage: ".previousPage", 
 				firstPage: ".firstPage",
@@ -33,7 +33,7 @@
 			this.settings = $.extend( {}, defaults, options );
 			this._defaults = defaults;
 			this._name = pluginName;
-			this.currentPage = 1;
+			this.currentPage = this.settings.page;
 			this.items = $(this.element).find(".items " + this.settings.item);
 			this.totalPages = Math.ceil(this.items.size() / this.settings.itemsPerPage);
 
