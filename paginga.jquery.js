@@ -1,5 +1,5 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.3
+ * paginga - jQuery Pagination Plugin v0.4
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
@@ -24,6 +24,10 @@
 				currentPageClass: "active",
 				pager: ".pager",
 				autoHidePager: true,
+				scrollToTop: {
+					offset: 15,
+					speed: 100,
+				},
 			};
 
 		// The actual plugin constructor
@@ -33,6 +37,7 @@
 			this.settings = $.extend( {}, defaults, options );
 			this._defaults = defaults;
 			this._name = pluginName;
+			this._ready = false;
 			this.currentPage = this.settings.page;
 			this.items = $(this.element).find(".items " + this.settings.item);
 			this.totalPages = Math.ceil(this.items.size() / this.settings.itemsPerPage);
@@ -53,6 +58,7 @@
 			{
 				this.bindEvents();
 				this.showPage();
+				this._ready = true;
 			},
 			bindEvents: function()
 			{
@@ -141,6 +147,11 @@
 					firstElement = element.find(plugin.settings.firstPage),
 					lastElement = element.find(plugin.settings.lastPage);
 
+				if(plugin._ready && plugin.settings.scrollToTop && (element.offset().top - plugin.settings.scrollToTop.offset) < $(window).scrollTop())
+				{
+					$("html, body").animate({ scrollTop: (element.offset().top - plugin.settings.scrollToTop.offset) }, plugin.settings.scrollToTop.speed);
+				}
+
 				if(this.currentPage <= 1)
 				{
 					previousElement.addClass("disabled");
@@ -174,7 +185,7 @@
 					{
 						var className = pageNumber == this.currentPage ? this.settings.currentPageClass : "";
 
-						pageNumbers.append("<a href='#' data-page='" + pageNumber + "' class='" + className + "'>" + pageNumber + "</a>");
+						pageNumbers.append("<a href='javascript:void(0);' data-page='" + pageNumber + "' class='" + className + "'>" + pageNumber + "</a>");
 					}
 
 					pageNumbers.find("a").on("click", function()
