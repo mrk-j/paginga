@@ -46,6 +46,11 @@
 			{
 				overflow: hidden;
 			}
+
+			.paginate-no-scroll .items div
+			{
+				height: 250px;
+			}
 		</style>
 	</head>
 	<body>
@@ -127,14 +132,42 @@
 				<div class="lastPage">&raquo;</div>
 			</div>
 		</div>
+		<h2>Example 5 (no scroll to top)</h2>
+		<div class="paginate-no-scroll 5">
+			<div class="items">
+				<div>Item 1</div>
+				<div>Item 2</div>
+				<div>Item 3</div>
+				<div>Item 4</div>
+				<div>Item 5</div>
+				<div>Item 6</div>
+				<div>Item 7</div>
+				<div>Item 8</div>
+				<div>Item 9</div>
+				<div>Item 10</div>
+				<div>Item 11</div>
+				<div>Item 12</div>
+			</div>
+			<div class="pager">
+				<div class="firstPage">&laquo;</div>
+				<div class="previousPage">&lsaquo;</div>
+				<div class="pageNumbers"></div>
+				<div class="nextPage">&rsaquo;</div>
+				<div class="lastPage">&raquo;</div>
+			</div>
+		</div>
 		<script>
 			$(function() {
 				$(".paginate").paginga({
-					
+					// use default options
 				});
 			  
 				$(".paginate-page-2").paginga({
 					page: 2
+				});
+
+				$(".paginate-no-scroll").paginga({
+					scrollToTop: false
 				});
 			});
 		</script>
