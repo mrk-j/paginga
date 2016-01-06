@@ -1,5 +1,5 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.4
+ * paginga - jQuery Pagination Plugin v0.5
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
@@ -34,7 +34,7 @@
 		function paginga(element, options)
 		{
 			this.element = element;
-			this.settings = $.extend( {}, defaults, options );
+			this.settings = $.extend( true, {}, defaults, options );
 			this._defaults = defaults;
 			this._name = pluginName;
 			this._ready = false;
