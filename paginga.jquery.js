@@ -210,7 +210,7 @@
 						var className = pageNumber == this.currentPage ? this.settings.currentPageClass : "";
 
 						pageNumbers.append("<a href='javascript:void(0);' data-page='" + pageNumber + "' class='" + className + "'>" + pageNumber + "</a>");
-					}				
+					}
 
 					pageNumbers.find("a").on("click", function()
 					{
