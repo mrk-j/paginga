@@ -1,5 +1,5 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.5
+ * paginga - jQuery Pagination Plugin v0.6
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
@@ -21,6 +21,7 @@
 				firstPage: ".firstPage",
 				lastPage: ".lastPage",
 				pageNumbers: ".pageNumbers",
+				maxPageNumbers: false,
 				currentPageClass: "active",
 				pager: ".pager",
 				autoHidePager: true,
@@ -181,12 +182,35 @@
 				{
 					pageNumbers.html("");
 
-					for(var pageNumber = 1; pageNumber <= this.totalPages; pageNumber++)
+					var firstPage = 1;
+					var lastPage = this.totalPages;
+
+					if(this.settings.maxPageNumbers)
+					{
+						var offset = Math.ceil((this.settings.maxPageNumbers - 1) / 2);
+
+						firstPage = Math.max(1, this.currentPage - offset);
+						lastPage = Math.min(this.totalPages, this.currentPage + offset);
+
+						if(lastPage - firstPage < this.settings.maxPageNumbers - 1)
+						{
+							if(firstPage <= offset)
+							{
+								lastPage = Math.min(this.totalPages, firstPage + this.settings.maxPageNumbers - 1);
+							}
+							else if(lastPage > this.totalPages - offset)
+							{
+								firstPage = Math.max(1, lastPage - this.settings.maxPageNumbers + 1);
+							}
+						}
+					}
+
+					for(var pageNumber = firstPage; pageNumber <= lastPage; pageNumber++)
 					{
 						var className = pageNumber == this.currentPage ? this.settings.currentPageClass : "";
 
 						pageNumbers.append("<a href='javascript:void(0);' data-page='" + pageNumber + "' class='" + className + "'>" + pageNumber + "</a>");
-					}
+					}				
 
 					pageNumbers.find("a").on("click", function()
 					{
