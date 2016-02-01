@@ -13,7 +13,7 @@ An example is available [here](http://mrk-j.github.io/paginga/example.html).
 Include paginga in your page:
 
 ```html
-<script src="https://cdn.rawgit.com/mrk-j/paginga/v0.5/paginga.jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/mrk-j/paginga/v0.6/paginga.jquery.min.js"></script>
 ```
 
 Use the following markup for the items you want to paginate:
@@ -47,18 +47,19 @@ $(".paginate").paginga({
 
 ## Options
 
-| Name             | Type            | Default                    | Description                                                                                                                                         |
-|------------------|-----------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| itemsPerPage     | integer         | 3                          | The number of items on one page.                                                                                                                    |
-| itemsContainer   | string          | ".items"                   | Selector for element containing all the elements that should be paginganated.                                                                       |
-| item             | string          | "> div"                    | Selector for elements in `itemsContainer`.                                                                                                          |
-| page             | integer         | 1                          | This is the initial page.                                                                                                                           |
-| nextPage         | string          | ".nextPage"                | Selector for the element to bind next page action.                                                                                                  |
-| previousPage     | string          | ".previousPage"            | Selector for the element to bind previous page action.                                                                                              |
-| firstPage        | string          | ".firstPage"               | Selector for the element to bind first page action.                                                                                                 |
-| lastPage         | string          | ".lastPage"                | Selector for the element to bind last page action.                                                                                                  |
-| pageNumbers      | string          | ".pageNumbers"             | Selector for the element the page numbers are placed in.                                                                                            |
-| currentPageClass | string          | "active"                   | Class name for the active page anchor in `pageNumbers` element.                                                                                     |
-| pager            | string          | ".pager"                   | Selector for element that contains all pagination anchors. This element is hidden when `autoHidePager` is set to `true` and there is only one page. |
-| autoHidePager    | boolean         | true                       | If set `true` the `pager` element is set to hidden if there is only one page.                                                                       |
-| scrollToTop      | object or false | { offset: 15, speed: 100 } | If not set `false` the first element on the page will be scrolled into the viewport on paginate.                                                    |
+| Name             | Type             | Default                    | Description                                                                                                                                         |
+|------------------|------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| itemsPerPage     | integer          | 3                          | The number of items on one page.                                                                                                                    |
+| itemsContainer   | string           | ".items"                   | Selector for element containing all the elements that should be paginganated.                                                                       |
+| item             | string           | "> div"                    | Selector for elements in `itemsContainer`.                                                                                                          |
+| page             | integer          | 1                          | This is the initial page.                                                                                                                           |
+| nextPage         | string           | ".nextPage"                | Selector for the element to bind next page action.                                                                                                  |
+| previousPage     | string           | ".previousPage"            | Selector for the element to bind previous page action.                                                                                              |
+| firstPage        | string           | ".firstPage"               | Selector for the element to bind first page action.                                                                                                 |
+| lastPage         | string           | ".lastPage"                | Selector for the element to bind last page action.                                                                                                  |
+| pageNumbers      | string           | ".pageNumbers"             | Selector for the element the page numbers are placed in.                                                                                            |
+| maxPageNumbers   | integer or false | false                      | If set to an `integer` the maximum of visible pages in the `.pageNumbers` element is equal to this setting.                                       |
+| currentPageClass | string           | "active"                   | Class name for the active page anchor in `pageNumbers` element.                                                                                     |
+| pager            | string           | ".pager"                   | Selector for element that contains all pagination anchors. This element is hidden when `autoHidePager` is set to `true` and there is only one page. |
+| autoHidePager    | boolean          | true                       | If set `true` the `pager` element is set to hidden if there is only one page.                                                                       |
+| scrollToTop      | object or false  | { offset: 15, speed: 100 } | If not set `false` the first element on the page will be scrolled into the viewport on paginate.                                                    |
