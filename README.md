@@ -33,7 +33,7 @@ Use the following markup for the items you want to paginate:
     <div class="pageNumbers"></div>
     <div class="nextPage">&rsaquo;</div>
     <div class="lastPage">&raquo;</div>
-    </div>
+  </div>
 </div>
 ```
 
