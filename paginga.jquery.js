@@ -1,5 +1,5 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.7
+ * paginga - jQuery Pagination Plugin v0.8-alpha
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
@@ -29,6 +29,7 @@
 					offset: 15,
 					speed: 100,
 				},
+				history: false
 			};
 
 		// The actual plugin constructor
@@ -59,6 +60,26 @@
 			{
 				this.bindEvents();
 				this.showPage();
+
+				if(this.settings.history)
+				{
+					var plugin = this;
+
+					if(window.location.hash)
+					{
+						var hash = window.location.hash.substring(1);
+
+						plugin.currentPage = hash;						
+						plugin.showPage.call(plugin);
+					}
+
+					window.addEventListener("popstate", function(event)
+					{
+						plugin.currentPage = event && event.state && event.state.page ? event.state.page : plugin.settings.page;						
+						plugin.showPage.call(plugin);
+					});
+				}
+
 				this._ready = true;
 			},
 			bindEvents: function()
@@ -216,8 +237,18 @@
 					{
 						plugin.currentPage = $(this).data("page");
 
+						plugin.setHistoryUrl.call(plugin);
 						plugin.showPage.call(plugin);
 					});
+				}
+			},
+			setHistoryUrl: function()
+			{
+				var plugin = this;
+
+				if(plugin._ready && plugin.settings.history && "pushState" in history)
+				{
+					history.pushState({ page: this.currentPage }, null, '#' + this.currentPage);
 				}
 			}
 		});
