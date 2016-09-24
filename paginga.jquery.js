@@ -1,5 +1,5 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.8-alpha
+ * paginga - jQuery Pagination Plugin v0.8-alpha2
  * https://github.com/mrk-j/paginga
  *
  * Copyright 2015 Mark and other contributors
@@ -120,6 +120,7 @@
 					this.currentPage = 1;
 				}
 
+				this.setHistoryUrl();
 				this.showPage();
 			},
 			showNextPage: function()
@@ -131,18 +132,21 @@
 					this.currentPage = this.totalPages;
 				}
 
+				this.setHistoryUrl();
 				this.showPage();
 			},
 			showFirstPage: function()
 			{
 				this.currentPage = 1;
 
+				this.setHistoryUrl();
 				this.showPage();
 			},
 			showLastPage: function()
 			{
 				this.currentPage = this.totalPages;
 
+				this.setHistoryUrl();
 				this.showPage();
 			},
 			showPage: function()
