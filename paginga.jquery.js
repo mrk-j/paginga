@@ -1,8 +1,8 @@
 /*!
- * paginga - jQuery Pagination Plugin v0.8
+ * paginga - jQuery Pagination Plugin v0.8.1
  * https://github.com/mrk-j/paginga
  *
- * Copyright 2015 Mark and other contributors
+ * Copyright 2017 Mark and other contributors
  * Released under the MIT license
  * https://github.com/mrk-j/paginga/blob/master/LICENSE
  */
@@ -43,7 +43,7 @@
 			this._ready = false;
 			this.currentPage = this.settings.page;
 			this.items = $(this.element).find(this.settings.itemsContainer + " " + this.settings.item);
-			this.totalPages = Math.ceil(this.items.size() / this.settings.itemsPerPage);
+			this.totalPages = Math.ceil(this.items.length / this.settings.itemsPerPage);
 
 			if(this.totalPages <= 1)
 			{
