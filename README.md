@@ -13,7 +13,7 @@ An example is available [here](http://mrk-j.github.io/paginga/example.html).
 Include paginga in your page:
 
 ```html
-<script src="https://cdn.rawgit.com/mrk-j/paginga/v0.6/paginga.jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/mrk-j/paginga/v0.8.1/paginga.jquery.min.js"></script>
 ```
 
 Use the following markup for the items you want to paginate:
